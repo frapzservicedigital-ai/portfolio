@@ -11,7 +11,18 @@
 
 `🚀 App live sur l'App Store` &nbsp; `📱 IA 100 % on-device` &nbsp; `🧠 RL multi-agents à grande échelle` &nbsp; `🔒 RAG sécurisé (guardrails)` &nbsp; `⚙️ MLOps GPU cloud`
 
-![Compétences clés](images/competences.png)
+### 🎯 Compétences clés
+
+| Domaine | Compétences |
+|---|---|
+| **Fine-tuning & RL** | LoRA · Reinforcement Learning · ensembles RL multi-agents à grande échelle · sélection évolutive |
+| **Speech AI** | Reconnaissance vocale · synthèse & clonage vocal · traduction neuronale temps réel |
+| **IA embarquée & mobile** | Exécution 100 % on-device iOS (ANE / CoreML / MLKit) · zéro serveur · zéro fuite de données |
+| **LLM appliqué** | RAG sécurisé (garde-fous entrée/sortie) · systèmes & orchestration multi-agents |
+| **Optimisation modèles** | Quantization INT8 / FP16 · distillation · latence temps réel < 50 ms |
+| **MLOps** | Entraînement GPU cloud multi-instances · Docker · CI/CD · déploiement & monitoring |
+| **Langages** | Python · TypeScript · JavaScript · MQL4 |
+| **Création** | Design / direction artistique · Photoshop · création web (HTML / CSS / JS) |
 
 <sub>🔐 *Identité volontairement privée — CV nominatif fourni sur demande directe au recruteur.*</sub>
 
