@@ -1,13 +1,31 @@
 # 👋 AI / ML Engineer
 
-> Ingénieur IA orienté **produit**. Je conçois, fine-tune et **livre** des
-> systèmes d'IA jusqu'à l'application finie — du modèle à l'App Store.
+### Du modèle de recherche à l'application livrée en production.
 
-*Identité volontairement privée. CV nominatif disponible sur demande directe.*
+> **Ingénieur IA orienté produit.** Je prends un système d'IA de bout en bout —
+> entraînement GPU, fine-tuning, optimisation, intégration et déploiement —
+> jusqu'à l'**application finie entre les mains des utilisateurs**. Autonome,
+> du prototype au *ship*.
+
+**Faits marquants**
+
+`🚀 App live sur l'App Store` &nbsp; `📱 IA 100 % on-device` &nbsp; `🧠 RL multi-agents à grande échelle` &nbsp; `🔒 RAG sécurisé (guardrails)` &nbsp; `⚙️ MLOps GPU cloud`
+
+### 🎯 Ce que je fais
+
+- 🧠 **Fine-tuning & Reinforcement Learning** — LoRA, ensembles RL multi-agents à grande échelle, sélection évolutive
+- 🗣️ **Speech AI** — reconnaissance vocale, synthèse & clonage vocal, traduction neuronale temps réel
+- 📱 **IA embarquée & mobile** — exécution 100 % on-device iOS (ANE / CoreML / MLKit), zéro serveur, zéro fuite de données
+- 🔎 **LLM appliqué** — RAG sécurisé avec garde-fous entrée/sortie, systèmes & orchestration multi-agents
+- 🛠️ **Optimisation de modèles** — quantization INT8/FP16, distillation, latence temps réel < 50 ms
+- ⚙️ **MLOps** — entraînement GPU cloud multi-instances, Docker, CI/CD, déploiement & monitoring
+- 🎨 **Création** — design / direction artistique, Photoshop, création web (HTML / CSS / JS)
+
+<sub>🔐 *Identité volontairement privée — CV nominatif fourni sur demande directe au recruteur.*</sub>
 
 ---
 
-### 🧰 Stack globale
+## 🧰 Stack technique
 
 | Catégorie | Technologies |
 |---|---|
