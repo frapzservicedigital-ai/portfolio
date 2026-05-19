@@ -2,41 +2,39 @@
 
 ### Du modèle de recherche à l'application livrée en production.
 
-> **Ingénieur IA orienté produit.** Je prends un système d'IA de bout en bout —
-> entraînement GPU, fine-tuning, optimisation, intégration et déploiement —
-> jusqu'à l'**application finie entre les mains des utilisateurs**. Autonome,
-> du prototype au *ship*.
+> **Ingénieur IA orienté produit — autodidacte.** Je maîtrise la chaîne IA
+> **de bout en bout** : entraînement GPU, fine-tuning, optimisation,
+> intégration et déploiement, jusqu'à l'**application finie entre les mains
+> des utilisateurs**.
+>
+> Formé en autodidacte, **j'apprends vite** et je vais au résultat : je
+> m'approprie une techno nouvelle en quelques jours et je la transforme en
+> produit qui tourne. **Autonome du prototype au *ship***, sans attendre
+> qu'on me montre.
+>
+> Ce que je vends : un profil qui **livre vraiment** — pas des slides, des
+> apps en production (App Store), des modèles entraînés, des pipelines
+> déployés.
 
 **Faits marquants**
 
 `🚀 App live sur l'App Store` &nbsp; `📱 IA 100 % on-device` &nbsp; `🧠 RL multi-agents à grande échelle` &nbsp; `🔒 RAG sécurisé (guardrails)` &nbsp; `⚙️ MLOps GPU cloud`
 
-### 🎯 Compétences clés
+## 🧰 Compétences & stack technique
 
-| Domaine | Compétences |
+| Domaine | Compétences & technologies |
 |---|---|
-| **Fine-tuning & RL** | LoRA · Reinforcement Learning · ensembles RL multi-agents à grande échelle · sélection évolutive |
-| **Speech AI** | Reconnaissance vocale · synthèse & clonage vocal · traduction neuronale temps réel |
-| **IA embarquée & mobile** | Exécution 100 % on-device iOS (ANE / CoreML / MLKit) · zéro serveur · zéro fuite de données |
-| **LLM appliqué** | RAG sécurisé (garde-fous entrée/sortie) · systèmes & orchestration multi-agents |
+| **Fine-tuning & RL** | LoRA · Reinforcement Learning (TFT, Dreamer) · ensembles RL multi-agents à grande échelle · sélection évolutive · PyTorch · Transformers |
+| **Speech AI** | Reconnaissance vocale · synthèse & clonage vocal · traduction neuronale temps réel (STT / TTS / NMT) |
+| **IA embarquée & mobile** | Exécution 100 % on-device iOS (ANE / CoreML / MLKit) · React Native · Expo · zéro serveur, zéro fuite de données |
+| **LLM appliqué & agents** | RAG sécurisé (garde-fous E/S · LlamaIndex · ChromaDB) · orchestration multi-agents · Anthropic API · OpenAI API |
 | **Optimisation modèles** | Quantization INT8 / FP16 · distillation · latence temps réel < 50 ms |
-| **MLOps** | Entraînement GPU cloud multi-instances · Docker · CI/CD · déploiement & monitoring |
+| **MLOps & infra** | Entraînement GPU cloud multi-instances (Vast.ai — RTX 5090 / H100 / RTX PRO 6000) · CUDA · Docker · FastAPI · CI/CD (GitHub Actions) · cloudflared · monitoring |
 | **Langages** | Python · TypeScript · JavaScript · MQL4 |
+| **Outils & environnements** | VS Code · Antigravity · Git / GitHub · écosystème Google (Gemini, Workspace) · Claude · ChatGPT |
 | **Création** | Design / direction artistique · Photoshop · création web (HTML / CSS / JS) |
 
 <sub>🔐 *Identité volontairement privée — CV nominatif fourni sur demande directe au recruteur.*</sub>
-
----
-
-## 🧰 Stack technique
-
-| Catégorie | Technologies |
-|---|---|
-| **Langages** | Python · TypeScript · JavaScript · MQL4 |
-| **ML / DL** | PyTorch · Transformers · Reinforcement Learning (TFT, Dreamer) · STT / TTS / voice cloning · NMT |
-| **Mobile** | React Native · Expo · iOS on-device (ANE / CoreML / MLKit) |
-| **LLM / Agents** | Anthropic API · OpenAI API · RAG (LlamaIndex, ChromaDB) · orchestration multi-agents |
-| **Infra** | Vast.ai GPU (RTX 5090 / H100 / RTX PRO 6000) · Docker · CUDA · FastAPI · GitHub Actions (CI iOS) · cloudflared |
 
 > Chaque projet ci-dessous indique **sa propre stack** — les choix techniques diffèrent selon les contraintes (embarqué, temps réel, entraînement GPU…).
 
