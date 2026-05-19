@@ -118,13 +118,7 @@ sociaux). L'intégration API a été développée sur mesure. Couplé à une
 **création visuelle et direction artistique** maison (conception des prompts,
 chartes, retouches).
 
-![Generative Video Studio dashboard](images/video_studio.png)
-
-<sub>Exemples de rendus générés par le pipeline :</sub>
-
-| | |
-|:-:|:-:|
-| ![Rendu clip 1](images/clip_sample_1.png) | ![Rendu clip 2](images/clip_sample_2.png) |
+![Generative Video Studio dashboard](images/video_studio_v2.png)
 
 > **Stack ·** `Python` · `API Seedance (I2V / T2V)` · `agent d'orchestration` · `Remotion` · `TypeScript` · `FFmpeg` · `upscaling`
 >
