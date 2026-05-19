@@ -44,38 +44,6 @@ revue Apple.
 
 ---
 
-### 🗣️ Moteur voix multilingue
-
-Moteur serveur de **synthèse et clonage vocal multilingue** (**23 langues**)
-exposé en API. Chaîne complète : transcription (*faster-whisper*), traduction
-neuronale (*m2m100*) et synthèse (*Chatterbox Multilingual*, repli *Piper*).
-**Streaming temps réel** : la voix commence à jouer pendant que la suite se
-génère encore (endpoint NDJSON + lecture en file côté client). **VAD robuste
-au bruit ambiant** (rue, voiture) : calibration automatique du bruit de fond,
-discrimination des bursts courts vs bruit continu, fin de parole détectée sur
-absence de pic vocal. Optimisations latence : pré-chargement et cache des
-voix de référence, compilation des modèles, découpe intelligente des phrases
-longues. Servi via FastAPI + tunnel cloudflared, consommé par une app mobile.
-
-> **Stack ·** `Python` · `PyTorch` · `FastAPI` · `faster-whisper (STT)` · `Chatterbox Multilingual / Piper (TTS)` · `m2m100 (NMT)` · `streaming + VAD` · `cloudflared`
-
----
-
-### 🎚️ Fine-tune TTS français
-
-Fine-tuning d'un modèle TTS (**Kokoro-82M / StyleTTS2**) pour obtenir une
-**voix française premium**. Dataset **~100h** agrégé (SIWIS, M-AILABS, Common
-Voice) : nettoyage, **phonémisation espeak-ng** et correction du dictionnaire
-IPA français (caractères combinants, ponctuation). Entraînement **LoRA
-multi-GPU** sur cloud (Vast.ai, RTX 5090 / H100) en **DDP**, avec pipeline
-**reproductible** : scripts de préflight réseau, patchs appliqués en amont,
-contrôle des checkpoints et validation d'inférence à chaque epoch (0 NaN,
-phonétique FR propre). Objectif : sortir une langue premium par mois.
-
-> **Stack ·** `Python` · `PyTorch` · `Kokoro-82M / StyleTTS2` · `LoRA` · `espeak-ng (phonémisation)` · `Vast.ai multi-GPU (RTX 5090 / H100)` · `DDP`
-
----
-
 ## 🧠 LLM · RAG · Agents
 
 ### 🔎 RAG bancaire sécurisé — assistant conformité
