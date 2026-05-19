@@ -31,6 +31,17 @@ décision Go/No-Go, suivi tokens/coût et synthèse agrégée.
 
 ---
 
+### 📈 RL Trading Engine — ensemble multi-agents à grande échelle
+
+Pipeline de **reinforcement learning population-based** : 800 agents (TFT +
+Dreamer) entraînés par tournois évolutifs isolés, puis ensemble des 20
+meilleurs en vote majoritaire. Inférence **live CPU < 50 ms/décision**.
+Entraînement GPU cloud dockerisé et reproductible.
+
+![RL Trading Engine architecture](images/rl_trading_engine.png)
+
+---
+
 ### 🧠 Domaines
 
 `LLM fine-tuning` · `Speech AI (STT / TTS / voice cloning)` · `On-device & mobile AI`
@@ -52,7 +63,6 @@ décision Go/No-Go, suivi tokens/coût et synthèse agrégée.
 |---|---|---|
 | **Moteur voix multilingue** | TTS / clonage vocal 23 langues, streaming temps réel, VAD robuste au bruit. | R&D |
 | **Fine-tune TTS FR** | Dataset ~100h, LoRA, entraînement multi-GPU cloud, pipeline reproductible. | R&D |
-| **Indicateurs trading** | Logique algorithmique MetaTrader 4 (patterns, FVG, stop dynamique). | Perso |
 
 <sub>🎬 Loisir : clip musical animé généré par IA (modèles de diffusion + Remotion).</sub>
 

@@ -4,3 +4,4 @@ cv.html
 *.key
 *token*
 *secret*
+_src_*.html
