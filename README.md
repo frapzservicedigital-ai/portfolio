@@ -120,6 +120,12 @@ chartes, retouches).
 
 ![Generative Video Studio dashboard](images/video_studio.png)
 
+<sub>Exemples de rendus générés par le pipeline :</sub>
+
+| | |
+|:-:|:-:|
+| ![Rendu clip 1](images/clip_sample_1.png) | ![Rendu clip 2](images/clip_sample_2.png) |
+
 > **Stack ·** `Python` · `API Seedance (I2V / T2V)` · `agent d'orchestration` · `Remotion` · `TypeScript` · `FFmpeg` · `upscaling`
 >
 > **Création ·** `Photoshop` · `design / direction artistique` · `création web (HTML / CSS / JS)`
