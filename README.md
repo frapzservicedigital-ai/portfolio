@@ -114,7 +114,7 @@ artistique** maison.
 
 ---
 
-### 🧠 Domaines de compétence
+## 🧠 Domaines de compétence
 
 `LLM fine-tuning` · `Speech AI (STT / TTS / voice cloning)` · `On-device & mobile AI`
 `Model quantization & optimization` · `Neural Machine Translation` · `RAG & guardrails`
@@ -124,6 +124,6 @@ artistique** maison.
 
 ---
 
-### 📫 Contact
+## 📫 Contact
 
 Échanges via recruteur — **contact direct uniquement** (pas de réseaux sociaux par choix).
