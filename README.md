@@ -25,9 +25,16 @@
 
 ### 🚀 Just One Tap — App de traduction vocale (iOS · live App Store)
 
-Pipeline IA **embarqué** : reconnaissance vocale → traduction → synthèse vocale.
-24 langues, exécution **100 % on-device** (zéro surchauffe), 4 modes
-(Solo / Duo / Caméra / Texte).
+Application iOS de traduction **conçue et livrée seul**, du prototype à la
+publication sur l'App Store. Pipeline IA **100 % embarqué** : reconnaissance
+vocale → traduction → synthèse vocale, **sans aucun serveur** (confidentialité
+totale, fonctionne hors-ligne après le premier téléchargement de modèle).
+**24 langues**, **4 modes** : *Solo* (appui maintenu), *Duo* (conversation
+face-à-face), *Caméra* (OCR + traduction de menus/textes imprimés), *Texte*.
+Optimisé pour tourner sur l'**Apple Neural Engine** → traduction quasi
+instantanée et **zéro surchauffe** même sur iPhone 12. Industrialisé : build
+CI iOS automatisé et déploiement de correctifs **OTA** sans repasser par la
+revue Apple.
 
 | | | | | |
 |:-:|:-:|:-:|:-:|:-:|
@@ -39,8 +46,16 @@ Pipeline IA **embarqué** : reconnaissance vocale → traduction → synthèse v
 
 ### 🗣️ Moteur voix multilingue
 
-TTS / clonage vocal **23 langues**, streaming temps réel, VAD robuste au bruit
-ambiant, endpoint de synthèse à faible latence.
+Moteur serveur de **synthèse et clonage vocal multilingue** (**23 langues**)
+exposé en API. Chaîne complète : transcription (*faster-whisper*), traduction
+neuronale (*m2m100*) et synthèse (*Chatterbox Multilingual*, repli *Piper*).
+**Streaming temps réel** : la voix commence à jouer pendant que la suite se
+génère encore (endpoint NDJSON + lecture en file côté client). **VAD robuste
+au bruit ambiant** (rue, voiture) : calibration automatique du bruit de fond,
+discrimination des bursts courts vs bruit continu, fin de parole détectée sur
+absence de pic vocal. Optimisations latence : pré-chargement et cache des
+voix de référence, compilation des modèles, découpe intelligente des phrases
+longues. Servi via FastAPI + tunnel cloudflared, consommé par une app mobile.
 
 > **Stack ·** `Python` · `PyTorch` · `FastAPI` · `faster-whisper (STT)` · `Chatterbox Multilingual / Piper (TTS)` · `m2m100 (NMT)` · `streaming + VAD` · `cloudflared`
 
@@ -48,8 +63,14 @@ ambiant, endpoint de synthèse à faible latence.
 
 ### 🎚️ Fine-tune TTS français
 
-Fine-tuning d'un modèle TTS sur dataset **~100h** : préparation données,
-phonémisation, entraînement LoRA multi-GPU cloud, pipeline reproductible.
+Fine-tuning d'un modèle TTS (**Kokoro-82M / StyleTTS2**) pour obtenir une
+**voix française premium**. Dataset **~100h** agrégé (SIWIS, M-AILABS, Common
+Voice) : nettoyage, **phonémisation espeak-ng** et correction du dictionnaire
+IPA français (caractères combinants, ponctuation). Entraînement **LoRA
+multi-GPU** sur cloud (Vast.ai, RTX 5090 / H100) en **DDP**, avec pipeline
+**reproductible** : scripts de préflight réseau, patchs appliqués en amont,
+contrôle des checkpoints et validation d'inférence à chaque epoch (0 NaN,
+phonétique FR propre). Objectif : sortir une langue premium par mois.
 
 > **Stack ·** `Python` · `PyTorch` · `Kokoro-82M / StyleTTS2` · `LoRA` · `espeak-ng (phonémisation)` · `Vast.ai multi-GPU (RTX 5090 / H100)` · `DDP`
 
@@ -59,9 +80,15 @@ phonémisation, entraînement LoRA multi-GPU cloud, pipeline reproductible.
 
 ### 🔎 RAG bancaire sécurisé — assistant conformité
 
-RAG sur documents de conformité (**AML / RGPD / guide interne**) : recherche
-vectorielle, génération **encadrée par garde-fous d'entrée/sortie**
-(anti-injection, blocklist, contrôle de la réponse), citations des sources, API.
+Assistant **RAG sécurisé** pour la conformité bancaire (banque fictive de
+démo). Ingestion locale de documents (**AML / RGPD / guide interne**),
+indexation vectorielle **ChromaDB** (embeddings MiniLM) et récupération
+orchestrée par **LlamaIndex**, génération de la réponse par **Claude** avec
+**citation systématique des sources**. Accent mis sur la **sécurité LLM** :
+*garde-fou d'entrée* (détection d'injection de prompt, blocklist) et
+*garde-fou de sortie* (contrôle de la réponse avant retour). Le tout exposé
+en **API FastAPI** + dashboard, **dockerisé**, avec **suite de tests pytest**
+et CI — démontre une approche *production* du RAG, pas un simple prototype.
 
 ![Banking RAG dashboard](images/rag_console.png)
 
@@ -71,9 +98,14 @@ vectorielle, génération **encadrée par garde-fous d'entrée/sortie**
 
 ### 🤖 FRAPZ — Système multi-agents IA
 
-Console d'orchestration **multi-agents** : 9 agents spécialisés répartis sur un
-workflow en 3 phases (Discovery → Activation → Production), avec portes de
-décision Go/No-Go, suivi tokens/coût et synthèse agrégée.
+Console d'**orchestration multi-agents** pilotant **9 agents spécialisés** +
+un agent *Captain* qui coordonne l'ensemble. Workflow structuré en **3 phases**
+(Discovery → Activation → Production) avec **portes de décision Go/No-Go**
+entre chaque phase : un agent ne démarre que si la porte précédente est
+validée. Multi-fournisseurs (**Anthropic + OpenAI**), **suivi des tokens et du
+coût** en temps réel, **synthèse agrégée** des sorties d'agents et génération
+de livrables. Front léger Alpine.js / Tailwind — illustre la **conception de
+systèmes agentiques** (rôles, dépendances, garde-fous d'orchestration).
 
 ![FRAPZ multi-agent console](images/frapz_console.png)
 
@@ -85,10 +117,17 @@ décision Go/No-Go, suivi tokens/coût et synthèse agrégée.
 
 ### RL Trading Engine — ensemble multi-agents à grande échelle
 
-Pipeline de **reinforcement learning population-based** : 800 agents (TFT +
-Dreamer) entraînés par tournois évolutifs isolés, puis ensemble des 20
-meilleurs en vote majoritaire. Inférence **live CPU < 50 ms/décision**.
-Entraînement GPU cloud dockerisé et reproductible.
+Pipeline de **reinforcement learning population-based** à grande échelle :
+**800 agents** entraînés par run, répartis sur **deux familles de modèles**
+(400 *Temporal Fusion Transformer* + 400 *Dreamer*, RL à imagination latente),
+chacune en deux sous-populations optimisant des objectifs différents. Sélection
+par **tournois évolutifs isolés** (une famille ne combat jamais l'autre),
+survie classée par fitness multi-métrique sur plusieurs générations, puis
+**ensemble des 20 meilleurs** (10 + 10) décidant par **vote majoritaire** —
+la confluence des deux familles fait la robustesse. Politique d'action
+**discrète multi-choix**. Entraînement **4× GPU datacenter** (cloud) dans un
+pipeline **dockerisé et reproductible** ; **inférence live CPU uniquement,
+< 50 ms/décision**, ~100 Mo RAM, branchée en temps réel via un pont dédié.
 
 ![RL Trading Engine architecture](images/rl_trading_engine_v2.png)
 
@@ -100,11 +139,16 @@ Entraînement GPU cloud dockerisé et reproductible.
 
 ### Generative Video Studio — pipeline vidéo automatisé
 
-**Agent d'orchestration** qui pilote l'**API Seedance** : génération automatique
-de plusieurs **branches / variantes par scène** (multi-seed, retry & suivi de
-coût), assemblage du **montage Remotion** synchronisé, post-traitement
-(upscale) et export multi-format. Couplé à une **création visuelle / direction
-artistique** maison.
+**Agent d'orchestration** maison qui automatise une chaîne de production vidéo
+de bout en bout. Pilote l'**API Seedance** (text-to-video & image-to-video)
+avec **retry/backoff** et **suivi de coût**, génère automatiquement
+**plusieurs branches/variantes par scène** (multi-seed) puis sélectionne les
+meilleures. Assemble ensuite le **montage Remotion** synchronisé (timeline,
+transitions, calage paroles/scènes), applique le **post-traitement** (upscale,
+encodage) et **exporte en multi-format** (horizontal + vertical réseaux
+sociaux). L'intégration API a été développée sur mesure. Couplé à une
+**création visuelle et direction artistique** maison (conception des prompts,
+chartes, retouches).
 
 ![Generative Video Studio dashboard](images/video_studio.png)
 
