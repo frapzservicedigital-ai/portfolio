@@ -34,6 +34,8 @@
 
 > Chaque projet ci-dessous indique **sa propre stack** — les choix techniques diffèrent selon les contraintes (embarqué, temps réel, entraînement GPU…).
 
+> 📝 **Aperçu — sélection de projets représentatifs.** Cette page est une **ébauche** : **d'autres réalisations** sont en cours ou déjà livrées (multiples applications mobiles, systèmes de trading algorithmique & agentique sur MetaTrader, moteurs vocaux multilingues additionnels, agents d'automatisation, scripts d'ingestion data, intégrations API, outils internes…) — **détails disponibles sur demande directe**.
+
 ---
 
 ## 🗣️ Speech & Voice AI
