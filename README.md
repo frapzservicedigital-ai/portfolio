@@ -81,6 +81,21 @@ et CI — démontre une approche *production* du RAG, pas un simple prototype.
 
 ---
 
+### 🧩 CodexArena — Extension VS Code multi-agents
+
+Extension **VS Code** maison qui transforme l'IDE en **arène collaborative
+multi-LLM** : **Claude** et **Codex (OpenAI)** travaillent **ensemble** dans
+un même panneau pour analyser, *reviewer* et corriger du code. Architecture à
+**rôles** (deux Analyseurs, un Codeur, un Admin) + mode *Auto* / *Manuel*,
+sélection de modèles par agent (GPT-5, Claude Sonnet…), envoi de la sélection
+courante de l'éditeur vers l'arène en un raccourci (`Ctrl+Shift+A`).
+
+![CodexArena VS Code extension](images/codexarena.png)
+
+> **Stack ·** `TypeScript / JavaScript` · `VS Code Extension API (^1.95)` · `Webview HTML / CSS` · `Anthropic API` · `OpenAI API` · `multi-agents par rôles`
+
+---
+
 ### 🤖 FRAPZ — Système multi-agents IA
 
 Console d'**orchestration multi-agents** pilotant **9 agents spécialisés** +
