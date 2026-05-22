@@ -38,6 +38,23 @@
 
 ---
 
+## 🧩 Developer Tools
+
+### CodexArena — Extension VS Code multi-agents
+
+Extension **VS Code** maison qui transforme l'IDE en **arène collaborative
+multi-LLM** : **Claude** et **Codex (OpenAI)** travaillent **ensemble** dans
+un même panneau pour analyser, *reviewer* et corriger du code. Architecture à
+**rôles** (deux Analyseurs, un Codeur, un Admin) + mode *Auto* / *Manuel*,
+sélection de modèles par agent (GPT-5, Claude Sonnet…), envoi de la sélection
+courante de l'éditeur vers l'arène en un raccourci (`Ctrl+Shift+A`).
+
+![CodexArena VS Code extension](images/codexarena.png)
+
+> **Stack ·** `TypeScript / JavaScript` · `VS Code Extension API (^1.95)` · `Webview HTML / CSS` · `Anthropic API` · `OpenAI API` · `multi-agents par rôles`
+
+---
+
 ## 🗣️ Speech & Voice AI
 
 ### 🚀 Just One Tap — App de traduction vocale (iOS · live App Store)
@@ -78,21 +95,6 @@ et CI — démontre une approche *production* du RAG, pas un simple prototype.
 ![Banking RAG dashboard](images/rag_console.png)
 
 > **Stack ·** `Python` · `FastAPI` · `LlamaIndex` · `ChromaDB` · `embeddings MiniLM` · `Claude (Anthropic)` · `guardrails I/O` · `Docker` · `GitHub Actions (CI)` · `pytest`
-
----
-
-### 🧩 CodexArena — Extension VS Code multi-agents
-
-Extension **VS Code** maison qui transforme l'IDE en **arène collaborative
-multi-LLM** : **Claude** et **Codex (OpenAI)** travaillent **ensemble** dans
-un même panneau pour analyser, *reviewer* et corriger du code. Architecture à
-**rôles** (deux Analyseurs, un Codeur, un Admin) + mode *Auto* / *Manuel*,
-sélection de modèles par agent (GPT-5, Claude Sonnet…), envoi de la sélection
-courante de l'éditeur vers l'arène en un raccourci (`Ctrl+Shift+A`).
-
-![CodexArena VS Code extension](images/codexarena.png)
-
-> **Stack ·** `TypeScript / JavaScript` · `VS Code Extension API (^1.95)` · `Webview HTML / CSS` · `Anthropic API` · `OpenAI API` · `multi-agents par rôles`
 
 ---
 
